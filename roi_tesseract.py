@@ -8,16 +8,14 @@ import tkinter
 from tkinter import ttk
 import threading
 
-pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+#pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
-# IMAGE_FILE_LOCATION = sys.argv[1]
-IMAGE_FILE_LOCATION = 'D:\Transcript-1.png'
+IMAGE_FILE_LOCATION = sys.argv[1]
+#IMAGE_FILE_LOCATION = 'D:\Transcript-1.png'
 print("Image location is ", IMAGE_FILE_LOCATION)
 input_img = cv2.imread(IMAGE_FILE_LOCATION)
 configStr = " "
 
-
-#####################################################################################################
 # ORIENTATION CORRECTION/ADJUSTMENT
 
 def orientation_correction(img, save_image=False):
@@ -51,12 +49,8 @@ def orientation_correction(img, save_image=False):
         cv2.imwrite('orientation_corrected.jpg', img_rotated)
     return img_rotated
 
-
-#####################################################################################################
-
 img_rotated = orientation_correction(input_img)
 
-#####################################################################################################
 # REGION OF INTEREST (ROI) SELECTION
 
 # initializing the list for storing the coordinates
@@ -132,5 +126,3 @@ print(fullConfig)
 
 # closing all open windows
 cv2.destroyAllWindows()
-
-#####################################################################################################
