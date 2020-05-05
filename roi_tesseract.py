@@ -8,10 +8,10 @@ import tkinter
 from tkinter import ttk
 import threading
 
-#pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
-IMAGE_FILE_LOCATION = sys.argv[1]
-#IMAGE_FILE_LOCATION = 'D:\Transcript-1.png'
+#IMAGE_FILE_LOCATION = sys.argv[1]
+IMAGE_FILE_LOCATION = 'D:\Transcript-1.png'
 print("Image location is ", IMAGE_FILE_LOCATION)
 input_img = cv2.imread(IMAGE_FILE_LOCATION)
 configStr = " "
